@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+int a[100001];
+int main()
+{
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+	int $25 = 0;
+	int $50 = 0;
+	bool tralai = true;
+	for (int i = 0; i < n; i++)
+	{
+		int tien = a[i];
+		if (tien == 25)
+			$25++;
+		else if (tien == 50)
+		{
+			if ($25 >= 1)
+			{
+				$50++;
+				$25++;
+			}
+			else
+			{
+				tralai = false;
+				break;
+			}
+		}
+		else if (tien == 100)
+		{
+			if ($25 > 2)
+			{
+				$25--;
+				$25--;
+				$25--;
+			}
+			else if ($50 > 0 && $25 > 0)
+			{
+				$25--;
+				$50--;
+			}
+			else
+			{
+				tralai = false;
+				break;
+			}
+		}
+	}
+	if (tralai)
+		cout << "YES";
+	else
+		cout << "NO";
+}
