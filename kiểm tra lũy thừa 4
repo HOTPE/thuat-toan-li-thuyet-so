@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+bool isPowerOfFour(long long n) {
+    if (n <= 0) return false;
+    while (n % 4 == 0) {
+        n /= 4;
+    }
+    return n == 1;
+}
+
+int main() {
+    long long n;
+    cin >> n;
+    if (isPowerOfFour(n))
+        cout << "TRUE" << endl;
+    else
+        cout << "FALSE" << endl;
+    return 0;
+}
