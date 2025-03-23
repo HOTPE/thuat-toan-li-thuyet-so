@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x, y;
+	cin >> x >> y;
+	int sum = x;
+	while (x >= y)
+	{
+		int n = x / y;
+		sum += n;
+		int tmp = x % y + n;
+		x = tmp;
+	}
+	cout << sum << endl;
+	return 0;
+}
