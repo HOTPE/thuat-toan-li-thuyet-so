@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+long sumofodd(long a, long b)
+{
+	if (a % 2 == 1)
+		a++;
+	if (b % 2 == 1)
+		b--;
+	a = a / 2;
+	b = b / 2;
+	return ((long)b * b - (long)a * a) % 1000007;
+}
+int main()
+{
+	long a, b;
+	cin >> a >> b;
+	cout << sumofodd(a, b);
+	return 0;
+}
