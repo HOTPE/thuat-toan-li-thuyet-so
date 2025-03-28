@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int soluongchuso(int n)
+{
+	int cout = 0;
+	while (n != 0)
+	{
+		n /= 10;
+		cout++;
+	}
+	return cout;
+}
+int main()
+{
+	int n;
+	cin >> n;
+	cout << soluongchuso(n) << endl;
+	return 0;
+}
