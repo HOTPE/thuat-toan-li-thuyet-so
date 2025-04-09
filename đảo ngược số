@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int daonguoc(int num)
+{
+	int dem = 0;
+	while (num > 0)
+	{
+		dem = dem * 10 + num % 10;
+		num /= 10;
+	}
+	return dem;
+}
+int main()
+{
+	int num;
+	cin >> num;
+	cout << daonguoc(num) << endl;
+	return 0;
+}
