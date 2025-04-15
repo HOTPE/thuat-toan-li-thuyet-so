@@ -1,0 +1,41 @@
+#include <iostream>
+#include <limits>
+#include <algorithm>
+using namespace std;
+int arr[10000];
+int a[10000];
+int main()
+{
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	int count = 0;
+	int totalSubsets = 1 << n;
+
+	for (int i = 0; i < totalSubsets; i++) {
+		int sum = 0;
+		for (int j = 0; j < n; j++) {
+			if (i & (1 << j)) {
+				sum += arr[j];
+			}
+		}
+		a[count++] = sum;
+	}
+	sort(a, a + count);
+	count = unique(a, a + count) - a;
+
+	int res = 1;
+	for (int i = 0; i < count; i++)
+	{
+		if (a[i] == res)
+			res++;
+		else if (a[i] > res)
+			break;
+	}
+	cout << res << endl;
+	return 0;
+}
