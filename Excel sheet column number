@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+	string v1;
+	cin >> v1;
+	int result = 0;
+	for (char x : v1)
+	{
+		int d = x - 'A' + 1;
+		result = result * 26 + d;
+	}
+	cout << result << endl;
+}
