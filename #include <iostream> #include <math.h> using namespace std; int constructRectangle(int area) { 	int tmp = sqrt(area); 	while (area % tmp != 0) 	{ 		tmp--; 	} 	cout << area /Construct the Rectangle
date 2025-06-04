@@ -1,0 +1,20 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int constructRectangle(int area)
+{
+	int tmp = sqrt(area);
+	while (area % tmp != 0)
+	{
+		tmp--;
+	}
+	cout << area / tmp << "," << tmp << endl;
+	return 0;
+}
+int main()
+{
+	int area;
+	cin >> area;
+	constructRectangle(area);
+	return 0;
+}
