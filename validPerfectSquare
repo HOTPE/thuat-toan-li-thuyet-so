@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+bool validPerfectSquare(long long n)
+{
+	if (n < 1)
+		return false;
+	int s = 1;
+	int e = (n / 2) + 1;
+	int mid;
+	while (s <= e)
+	{
+		mid = (s + e) / 2;
+		if (mid * mid == n)
+			return true;
+		else if (mid * mid < n)
+			s = mid + 1;
+		else
+			e = mid - 1;
+	}
+	return false;
+}
+int main()
+{
+	long long n;
+	cin >> n;
+	if (validPerfectSquare(n))
+		cout << "true" << endl;
+	else
+		cout << "false" << endl;
+}
